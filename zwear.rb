@@ -41,6 +41,8 @@ get '/list' do
 end
 
 get '/new' do
+  @title = "Create A New Product"
+  erb :new
 end
 
 get '/create' do

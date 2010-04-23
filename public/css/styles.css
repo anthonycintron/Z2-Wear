@@ -74,3 +74,11 @@ ul li.product-item
 	width: 560px;
 	margin-top: 180px;
 }
+
+#create-product
+{
+	width:200px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 200px;
+}

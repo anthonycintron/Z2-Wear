@@ -1,0 +1,31 @@
+<h1><% @title %></h1>
+
+<form action="/create" method="post" id="create-product" enctype="multipart/form-data">
+	<p>
+		<label>Title:</label><br />
+		<input type="text" name="product[title]" id="title" />
+	</p>
+	<p>
+		<label>Thumbnail:</label><br />
+		<input type="file" name="product[thumb]" id="thumb" />
+	</p>
+	<p>
+		<label>Large Image:</label><br />
+		<input type="file" name="product[large]" id="large" />
+	</p>
+	<p>
+		<label>description:</label><br />
+		<input type="text" name="product[description]" id="description" />
+	</p>
+	<p>
+		<label>Price:</label><br />
+		<input type="text" name="product[price]" id="price" />
+	</p>
+	<p>
+		<label>URL:</label><br />
+		<input type="text" name="product[url]" id="url" />
+	</p>
+	<p>
+		<input type="submit" >
+	</p>
+</form>
