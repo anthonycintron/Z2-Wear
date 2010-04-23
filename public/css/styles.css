@@ -30,10 +30,17 @@ ul.nav-list
 
 }
 
-ul li 
+ul li
+{
+	display:inline;
+	padding:10px;
+}
+
+ul li.product-item 
 {
 	display:inline;
 	padding: 10px;
+	float:right;
 }
 
 
