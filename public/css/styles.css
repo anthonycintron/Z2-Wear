@@ -93,10 +93,34 @@ a.nav-item
 a
 {
 	color: #f471b9;
+	font-size: 14px;
+	letter-spacing: 1px;
 }
 
 h4
 {
 	color: #5f5b5b;
 	margin: 10px 0px 5px 5px;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.detail-link
+{
+	padding-left: 5px;
+	float:left;
+}
+
+.detail-img
+{
+	float:right;
+}
+
+#product-window
+{
+	position: absolute;
+	width: 757px;
+	height: 553px;
+	background-color: #fff;
+	top: -300px;
 }

@@ -5,20 +5,22 @@
 	<title><%= @title %></title>
 	<link href="/css/styles.css" media="screen" rel="stylesheet" 
 	type="text/css" media="screen, projection"/>
-	<script type="text/javascript" src="http://cufon.shoqolate.com/js/cufon-yui.js"/>
-	<script type="text/javascript" src="/js/AvantGarde_Bk_BT_400.font.js"/>
-	<script type="text/javascript" src="/js/site.js"/>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="http://cufon.shoqolate.com/js/cufon-yui.js"></script>
+	<script type="text/javascript" src="/js/AvantGarde_Bk_BT_400.font.js"></script>
+	<script type="text/javascript" src="/js/site.js"></script>
 </head>
 <body>
 	<div id="nav-container">
 		<ul class="nav-list">
-			<li><a class="nav-item" href='#'>Z<sup>2</sup> WEAR</a></li>
+			<li><a class="nav-item" href='#'>Z WEAR</a></li>
 			<li><a class="nav-item" href='#'>LOOK BOOK</a></li>
 			<li><a class="nav-item" href="#"><img src="/imgs/contact-img.gif" /></a></li>
 		</ul>
 	</div>
-
+<div id="content-container">
   <%= yield %>
+</div>
 <!--	Copyright © 2010 Z Wear Inc. -->
 </body>
 </html>
