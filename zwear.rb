@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'dm-core'
-
+require 'lib/authorization'
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/db/zwear.db")
 
 class Product
@@ -28,7 +28,6 @@ end
 
 # Create or upgrade all tables at once, like magic
 DataMapper.auto_upgrade!
-  
 
 # set utf-8 for outgoing 
 before do
@@ -40,6 +39,9 @@ get '/' do
   erb :home
 end
 
+
+
+
 # retrieve list of products
 get '/list' do
   @product = "List Products"
@@ -48,9 +50,12 @@ get '/list' do
 end
 
 get '/new' do
+  #require_admin
   @title = "Create A New Product"
   erb :new
 end
+
+
 
 post '/create' do
   @product = Product.new(params[:product])
@@ -59,7 +64,6 @@ post '/create' do
   if @product.save
     # upload thumb image
     thumbPath = File.join(Dir.pwd, "/public/products", @product.thumbImgName)
-    puts "THUMB IMAGE INFO: #{params[:product][:thumb][:filename]}"
     File.open(thumbPath, "wb") do |f|
       f.write(params[:product][:thumb][:tempfile].read)
     end
@@ -74,7 +78,18 @@ post '/create' do
   end
 end
 
-get '/delete' do
+
+
+get '/delete/:id' do
+  product = Product.get(params[:id])
+  unless product.nil?
+    thumbImgPath = File.join(Dir.pwd, "/public/products", product.thumbImgName)
+    largeImgPath = File.join(Dir.pwd, "/public/products", product.largeImgName)
+    File.delete(thumbImgPath)
+    File.delete(largeImgPath)
+    product.delete
+  end
+  redirect('/list')
 end
 
 get '/show/:id' do
