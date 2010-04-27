@@ -5,7 +5,9 @@ Cufon.now();
 var app = {
 	
 	loadProductList: function() {
-		$('#products').load("/list");
+		$('#products').load("/list", function (){
+			
+		});
 	},
 	
 	
@@ -13,16 +15,31 @@ var app = {
 		$('#feature-img').hide();
 		$('#products').hide();
 		$('#content-container').load("/show/" + prodID);	
+	},
+	
+	setupAjaxCallbacks: function() {
+		
+		$('body').ajaxStart(function() {
+			$('#ajax-status').show();
+
+		});
+		
+		$('body').ajaxStop(function() {
+			$('#ajax-status').fadeOut();
+		});
+		
+		$('body').ajaxError(function(event, xhr, ajaxOptions, thrownError) {
+			console.log("XHR Response: " + JSON.string(xhr))
+
+		});
 	}
 	
 	
 };
 
 $(document).ready(function(){
-	
 	app.loadProductList();
-	
-
+	app.setupAjaxCallbacks();
 	
 });
 
