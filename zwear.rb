@@ -46,7 +46,7 @@ end
 get '/list' do
   @product = "List Products"
   @product = Product.all(:order => [:created_at.desc])
-  erb :list
+  erb :list, :layout => false
 end
 
 get '/new' do
@@ -95,7 +95,7 @@ end
 get '/show/:id' do
   @product = Product.get(params[:id])
   if @product
-    erb :show
+    erb :show, :layout => false
   else
     redirect('/list')
   end

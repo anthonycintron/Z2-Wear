@@ -1,10 +1,12 @@
-<div id="product-window" class="round_box box_shadow">
-	<h1><%= @title %></h1>
-	<table border="0" cellpadding="0" cellspacing="10" class="list">
-		<% @product.each_with_index do |product, i| %>
-			<tr <%= ' class="alt"' if i%2==0 %>>
-				<td><a href="/show/<%= product.id %>"><%= product.title %></a></td>
-				<td><a href="/delete/<%= product.id %>">delete</a></td>
-		<% end %>
-	</table>
-</div>
+<ul id='product-list'>
+	<% @product.each_with_index do | product, i | %>
+		<li class="product-item">
+			<a href='javascript:app.loadProduct(<%= product.id %>)'>
+				<img class="round_box box_shadow" src="imgs/<%= product.thumbImgName %>" />
+			</a>
+			<h4><%= product.title %></h4>
+			<a class='detail-link' href='javascript:app.loadProduct(<%= product.id %>)'>DETAIL</a>
+			<img class='detail-img' src='/imgs/detail-img.gif' />
+		</li>
+	<% end %>
+</ul>
