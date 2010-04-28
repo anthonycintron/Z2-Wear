@@ -135,9 +135,60 @@ h4
 
 #ajax-status
 {
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size: 12px;
+	text-align: center;
 	position: absolute;
 	width: 100px;
 	height: 50px;
 	background-color: #fff;
-	left: 100px;
+	right: 50px;
 }
+
+.productImg
+{
+	margin-top: 15px;
+	margin-left: 15px;
+	float:left;
+}
+#product-detail-content
+{
+	margin-top: 15px;
+	float:right;
+	width:280px;
+}
+
+a.close-btn
+{
+	margin-left: 220px;
+}
+
+#bubble
+{
+	position: relative;
+	width: 400px;
+	height:100px;
+	background-color: #fff;
+	left: 500px;
+	padding: 5px;
+}
+
+#bubble-container
+{
+	width:937px;
+	height:100px;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+#sub-container
+{
+	margin-top:50px;
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+

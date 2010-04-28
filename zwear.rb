@@ -35,7 +35,7 @@ before do
 end
 
 get '/' do
-  @title = "Z Square Homepage"
+  @title = "Welcome to Z"
   erb :home
 end
 
@@ -44,6 +44,7 @@ end
 
 # retrieve list of products
 get '/list' do
+  @title = "Z Weare Product List"
   @product = "List Products"
   @product = Product.all(:order => [:created_at.desc])
   erb :list, :layout => false

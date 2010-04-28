@@ -1,12 +1,16 @@
-<ul id='product-list'>
-	<% @product.each_with_index do | product, i | %>
-		<li class="product-item">
-			<a href='javascript:app.loadProduct(<%= product.id %>)'>
-				<img class="round_box box_shadow" src="imgs/<%= product.thumbImgName %>" />
-			</a>
-			<h4><%= product.title %></h4>
-			<a class='detail-link' href='javascript:app.loadProduct(<%= product.id %>)'>DETAIL</a>
-			<img class='detail-img' src='/imgs/detail-img.gif' />
-		</li>
-	<% end %>
-</ul>
+<img id="feature-img" class="feature_img round_box" src="imgs/feature-img.jpg" />
+<div id="products">
+	<ul id='product-list'>
+		<% @product.each_with_index do | product, i | %>
+			<li class="product-item">
+				<a href='javascript:app.loadProduct(<%= product.id %>)'>
+					<img class="round_box box_shadow" src="imgs/<%= product.thumbImgName %>" />
+				</a>
+				<h4><%= product.title %></h4>
+				<a class='detail-link' href='javascript:app.loadProduct(<%= product.id %>)'>DETAIL</a>
+				<img class='detail-img' src='/imgs/detail-img.gif' />
+			</li>
+		<% end %>
+	</ul>
+</div>
+

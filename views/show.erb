@@ -1,11 +1,11 @@
 <div id="product-window" class="round_box box_shadow">
-	<h1><%= @title %></h1>
-	<p>
-		<img src='/products/<%= @product.largeImgName %>' />
-	</p>
-	<p>
-		<b>Title: </b>
-		<%= @product.title %>
-	</p>
+	<img class='productImg' src='/products/<%= @product.largeImgName %>' />
+	<div id='product-detail-content'>
+		<a class='close-btn' href='javascript:app.closeProduct();'>CLOSE</a>
+		<p>
+			<b>Title: </b>
+			<%= @product.title %>
+		</p>
+	</div>
 	
 </div>
