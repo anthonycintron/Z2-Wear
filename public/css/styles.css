@@ -192,3 +192,15 @@ a.close-btn
 }
 
 
+#close-bubble-btn
+{
+	font: 11px;
+	float:right;
+}
+#sub-text
+{
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size: 12px;
+	color: #5f5b5b;
+	clear: right;
+}

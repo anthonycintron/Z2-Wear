@@ -12,6 +12,19 @@ var app = {
 	
 	showBubble: function(section){
 		$('#bubble').fadeIn();
+		
+		switch(section)
+		{
+			case 'zwear':
+				$('#sub-text').text("Welcome to Z Wear. Here is a brief description of our company.");
+				break;
+			case 'lookbook':
+				$('#sub-text').text("Download our Fall 2010 look book. ");
+				break;
+			case 'contact':
+				$('#sub-text').text("You may reach us at: contact@z2wear.com");
+				break;
+		}
 	},
 	
 	
@@ -54,6 +67,7 @@ var app = {
 	},
 	
 	updateState: function() {
+		$('title').append('Product Detail')
 		if ( currentState == 'productDetail')
 		{
 			$('#product-window').animate(
