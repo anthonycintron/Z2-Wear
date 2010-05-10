@@ -59,6 +59,7 @@ var app = {
 		$('body').ajaxStop(function() {
 			$('#ajax-status').fadeOut();
 			app.updateState();
+			Cufon.refresh();
 		});
 		
 		$('body').ajaxError(function(event, xhr, ajaxOptions, thrownError) {
@@ -90,7 +91,9 @@ var app = {
 
 
 $(document).ready(function(){
-	$('#bubble').hide();
-	app.loadProductList();
-	app.setupAjaxCallbacks();	
+	
+	 $('#bubble').hide();
+	 app.loadProductList();
+	 app.setupAjaxCallbacks();	
+
 });

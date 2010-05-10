@@ -2,7 +2,7 @@ body {
 	background-color:#f471b9;
 	background-image:url('/imgs/bubble_bckgrnd.gif');
 	background-repeat: no-repeat;
-	background-attachment:fixed;
+	background-attachment:scroll;
 	background-position: center 5px;
 }
 
@@ -32,14 +32,20 @@ ul.nav-list
 ul li
 {
 	display:inline;
-	padding:10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom:5px;
 }
 
 ul li.product-item 
 {
+	padding-top: 10px;
 	display:inline;
-
-	float:right;
+	float:left;
+	background-color: #fff;
+	-moz-border-radius: 15px; /* FF1+ */
+  -webkit-border-radius: 15px; /* Saf3+, Chrome */
+  border-radius: 15px; /* Opera 10.5, IE 9 */
 }
 
 
@@ -70,18 +76,18 @@ ul li.product-item
 #products
 {
 	float:right;
-	width: 560px;
-	margin-top: 180px;
-	margin-left: 5px;
-	padding-left: 5px;
+	width: 574px;
+	margin-top: 75px;
+	margin-left: 0;
+	padding-left: 0;
 	margin-right:30px;
 }
 
 #product-list
 {
 	width: 560px;
-	padding-left: 5px;
-	margin-right:40px;
+	padding-left: 0px;
+
 }
 
 
@@ -143,6 +149,7 @@ h4
 	height: 50px;
 	background-color: #fff;
 	right: 50px;
+	top:50px;
 }
 
 .productImg
@@ -167,7 +174,7 @@ a.close-btn
 {
 	position: relative;
 	width: 400px;
-	height:100px;
+	height:60px;
 	background-color: #fff;
 	left: 500px;
 	padding: 5px;
@@ -176,7 +183,7 @@ a.close-btn
 #bubble-container
 {
 	width:937px;
-	height:100px;
+	height:75px;
 	margin-left: auto;
 	margin-right:auto;
 }
@@ -185,8 +192,8 @@ a.close-btn
 {
 	margin-top:50px;
 	position: absolute;
-	width: 100%;
-	height: 100px;
+	width: 93%;
+	height: 75px;
 	margin-left:auto;
 	margin-right:auto;
 }
