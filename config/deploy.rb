@@ -1,20 +1,14 @@
-set :application, "z2wear.supdun.com"
-set :deploy_to, "/sites/z2wear.com/httpdocs/#{application}"
+set :application, "z2wear.com"
 set :repository,  "git@github.com:anthonycintron/Z2-Wear.git"
+set :deploy_to, "/sites/supdun.com/subdomains/stage/httpdocs/#{application}"
 set :branch, "master"
-set :user, "deploy"
-
+set :user, "root"
+set :use_sudo, false
+set :password, "San.franciSCo!!"
 set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "#{application}"                          # Your HTTP server, Apache/etc
-role :app, "#{application}"                          # This may be the same as your `Web` server
-role :db,  "#{application}", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
-
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
+role :web, "74.55.138.26"                          # Your HTTP server, Apache/etc
+role :app, "74.55.138.26"
 
 namespace :deploy do
  task :start do ; end
@@ -23,4 +17,3 @@ namespace :deploy do
    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
  end
 end
-
