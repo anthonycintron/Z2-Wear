@@ -3,14 +3,15 @@ Cufon.replace('a');
 Cufon.now();
 
 var currentState = 'home';
-
 var app = {
 	
-	closeBubble: function(){
+	closeBubble: function()
+	{
 		$('#bubble').fadeOut();
 	},
 	
-	showBubble: function(section){
+	showBubble: function(section)
+	{
 		$('#bubble').fadeIn();
 		
 		switch(section)
@@ -19,10 +20,10 @@ var app = {
 				$('#sub-text').text("Welcome to Z Wear. Here is a brief description of our company.");
 				break;
 			case 'lookbook':
-				$('#sub-text').text("Download our Fall 2010 look book. ");
+				$('#sub-text').append("Click <a href='/pdfs/Z2Wear-The eLite Collection F2010 Look Book.pdf'>here</a> to download our Fall 2010 look book. ");
 				break;
 			case 'contact':
-				$('#sub-text').text("You may reach us at: contact@z2wear.com");
+				$('#sub-text').append("You may reach contact us <a href='mailto:contact@z2wear.com'>here</a>.");
 				break;
 		}
 	},
@@ -36,51 +37,56 @@ var app = {
 		$('#content-container').load("/list", function ()
 		{
 			$(this).fadeIn(500);
-
 		});
 	},
 	
 	
-	loadProduct: function(prodID) {
+	loadProduct: function(prodID) 
+	{
 		currentState = 'productDetail';
-		$('#feature-img').fadeOut("fast", function() {
-			$('#products').fadeOut(500, function() {
+		$('#feature-img').fadeOut("fast", function() 
+		{
+			$('#products').fadeOut(500, function() 
+			{
 				$('#content-container').load("/show/" + prodID);
 			})
 		});
 	},
 	
-	setupAjaxCallbacks: function() {
+	setupAjaxCallbacks: function() 
+	{
 		
-		$('body').ajaxStart(function() {
+		$('body').ajaxStart(function() 
+		{
 			$('#ajax-status').show();
 		});
 		
-		$('body').ajaxStop(function() {
+		$('body').ajaxStop(function() 
+		{
 			$('#ajax-status').fadeOut();
 			app.updateState();
 			Cufon.refresh();
 		});
 		
-		$('body').ajaxError(function(event, xhr, ajaxOptions, thrownError) {
-
+		$('body').ajaxError(function(event, xhr, ajaxOptions, thrownError) 
+		{
 		});
 	},
 	
-	updateState: function() {
+	updateState: function() 
+	{
 		$('title').append('Product Detail')
 		if ( currentState == 'productDetail')
 		{
 			$('#product-window').animate(
-				{ top: '+=485px'}, 500, function() {
-			  		// Animation complete.
-			});
+				{ top: '+=485px'}, 500, function() {/*Animation complete.*/});
 		}
 	},
 	
 	closeProduct: function(){
 		$('#product-window').animate(
-			{ top: '-=1000px'}, 500, function() {
+			{ top: '-=1000px'}, 500, function() 
+			{
 		  		// Animation complete.
 					app.loadProductList();
 		});
@@ -88,12 +94,9 @@ var app = {
 	
 };
 
-
-
-$(document).ready(function(){
-	
+$(document).ready(function()
+{	
 	 $('#bubble').hide();
 	 app.loadProductList();
 	 app.setupAjaxCallbacks();	
-
 });

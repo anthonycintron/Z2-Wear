@@ -228,8 +228,9 @@ a.close-btn
 {
 	padding-left: 5px;
 }
-.available
+.avail
 {
+	padding-left: 5px;
 	font-style: italic;
 }
 .price-label
