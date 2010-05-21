@@ -1,6 +1,6 @@
 Cufon.replace('h4');
 Cufon.replace('a');
-Cufon.now();
+////////Cufon.now();
 
 var currentState = 'home';
 var app = {
@@ -129,6 +129,7 @@ var app = {
 
 $(document).ready(function()
 {	
+	 Cufon.now();
 	 $('#bubble').hide();
 	 app.loadProductList();
 	 app.setupAjaxCallbacks();	
