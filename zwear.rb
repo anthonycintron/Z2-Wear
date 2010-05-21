@@ -36,23 +36,26 @@ before do
 end
 
 get '/' do
-  @title = "Welcome to Z"
+  @title = "Welcome to Z2 Wear"
   erb :home
 end
 
 
-
-
 # retrieve list of products
 get '/list' do
-  @title = "Z Weare Product List"
+  @title = "Z Wear Product List"
   @product = "List Products"
   @product = Product.all(:order => [:created_at.desc])
   erb :list, :layout => false
 end
 
+get '/size_chart' do
+  @title = "Z2 Wear Size Chart"
+  erb :size_chart, :layout => false
+end
+
+
 get '/new' do
-  #require_admin
   @title = "Create A New Product"
   erb :new
 end

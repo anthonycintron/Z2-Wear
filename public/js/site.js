@@ -20,10 +20,10 @@ var app = {
 				$('#sub-text').text("Welcome to Z Wear. Here is a brief description of our company.");
 				break;
 			case 'lookbook':
-				$('#sub-text').append("Click <a href='/pdfs/Z2Wear-The eLite Collection F2010 Look Book.pdf'>here</a> to download our Fall 2010 look book. ");
+				$('#sub-text').html("Click <a href='/pdfs/Z2Wear-The eLite Collection F2010 Look Book.pdf'>here</a> to download our Fall 2010 look book. ");
 				break;
 			case 'contact':
-				$('#sub-text').append("You may reach contact us <a href='mailto:contact@z2wear.com'>here</a>.");
+				$('#sub-text').html("You may reach contact us <a href='mailto:contact@z2wear.com'>here</a>.");
 				break;
 		}
 	},
@@ -75,11 +75,21 @@ var app = {
 	
 	updateState: function() 
 	{
-		$('title').append('Product Detail')
+		//$('title').text('Product Detail');
+		
 		if ( currentState == 'productDetail')
 		{
 			$('#product-window').animate(
 				{ top: '+=485px'}, 500, function() {/*Animation complete.*/});
+				
+				
+			$('.denim').click( function(e){
+					app.showDetailImg('denim');
+			});
+			
+			$('.normal').click(function(e) {
+				app.showDetailImg('default');
+			})
 		}
 	},
 	
@@ -90,6 +100,29 @@ var app = {
 		  		// Animation complete.
 					app.loadProductList();
 		});
+	},
+	
+	showDetailImg:function(img) {
+		
+		$(".productImg").remove();
+		switch(img)
+		{
+			case 'denim':
+				// denim
+				$("#product-window").append("Denim");
+				break;
+			case 'shark':
+				// shark
+				break;
+			case 'default':
+				// default
+				$("#product-window").append('<img class="productImg" src="/products/sayyes_large.jpg">');
+				break;
+		}		
+	},
+	
+	showSizeChart:function() {
+		window.open("/size_chart", "Size Chart", "menubar=no, width=500, height=350, toolbar=no");
 	}
 	
 };
@@ -99,4 +132,5 @@ $(document).ready(function()
 	 $('#bubble').hide();
 	 app.loadProductList();
 	 app.setupAjaxCallbacks();	
+	
 });
