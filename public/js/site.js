@@ -23,7 +23,7 @@ var app = {
 				$('#sub-text').html("Click <a href='/pdfs/Z2Wear-The eLite Collection F2010 Look Book.pdf'>here</a> to download our Fall 2010 look book. ");
 				break;
 			case 'contact':
-				$('#sub-text').html("You may reach contact us <a href='mailto:contact@z2wear.com'>here</a>.");
+				$('#sub-text').html("You may reach contact us <a href='mailto:sales@z2wear.com'>here</a>.");
 				break;
 		}
 	},
@@ -89,7 +89,11 @@ var app = {
 			
 			$('.normal').click(function(e) {
 				app.showDetailImg('default');
-			})
+			});
+			
+			$('.shark').click(function(e) {
+				app.showDetailImg('shark');
+			});
 		}
 	},
 	
@@ -109,10 +113,11 @@ var app = {
 		{
 			case 'denim':
 				// denim
-				$("#product-window").append("Denim");
+				$("#product-window").append('<img class="productImg" src="/products/denim.jpg">');
 				break;
 			case 'shark':
 				// shark
+				$("#product-window").append('<img class="productImg" src="/products/shark.jpg">');
 				break;
 			case 'default':
 				// default
