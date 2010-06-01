@@ -17,13 +17,13 @@ var app = {
 		switch(section)
 		{
 			case 'zwear':
-				$('#sub-text').text("Welcome to Z Wear. Here is a brief description of our company.");
+				$('#sub-text').text("The Z2 wear girl has her own little twinkle before she truly shines! The new Elite Collection takes inspiration from that belief.");
 				break;
 			case 'lookbook':
 				$('#sub-text').html("Click <a href='/pdfs/Z2Wear-The eLite Collection F2010 Look Book.pdf'>here</a> to download our Fall 2010 look book. ");
 				break;
 			case 'contact':
-				$('#sub-text').html("You may reach contact us <a href='mailto:sales@z2wear.com'>here</a>.");
+				$('#sub-text').html("You may contact us <a href='mailto:sales@z2wear.com'>here</a>.");
 				break;
 		}
 	},
