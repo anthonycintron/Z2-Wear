@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'dm-core'
-require 'lib/authorization'
+#require 'lib/authorization'
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/db/zwear.db")
 
