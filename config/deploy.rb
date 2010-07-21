@@ -1,6 +1,7 @@
 set :application, "z2wear.com"
 set :repository,  "git@github.com:anthonycintron/Z2-Wear.git"
-set :deploy_to, "/sites/z2wear.com/httpdocs/#{application}"
+#set :deploy_to, "/sites/z2wear.com/httpdocs/#{application}"
+set :deploy_to, "/sites/z2wear.com/httpdocs"
 set :branch, "master"
 set :user, "root"
 set :use_sudo, false
