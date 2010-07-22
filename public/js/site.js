@@ -37,6 +37,7 @@ var app = {
 		$('#content-container').load("/list", function ()
 		{
 			$(this).fadeIn(500);
+			$('#mjr_crds').show();
 		});
 	},
 	
